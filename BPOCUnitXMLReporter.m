@@ -11,21 +11,21 @@
 
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "GDataXMLNode.h"
 
 @interface BPTestXunitXmlListener : NSObject
 {
 @private
-    NSXMLDocument *document;
-    NSXMLElement *suitesElement;
-    NSXMLElement *currentSuiteElement;
-    NSXMLElement *currentCaseElement;
+    GDataXMLDocument *document;
+    GDataXMLElement *suitesElement;
+    GDataXMLElement *currentSuiteElement;
+    GDataXMLElement *currentCaseElement;
 }
 
-@property (retain) NSXMLDocument *document;
-@property (retain) NSXMLElement *suitesElement;
-@property (retain) NSXMLElement *currentSuiteElement;
-@property (retain) NSXMLElement *currentCaseElement;
+@property (retain) GDataXMLDocument *document;
+@property (retain) GDataXMLElement *suitesElement;
+@property (retain) GDataXMLElement *currentSuiteElement;
+@property (retain) GDataXMLElement *currentCaseElement;
 
 - (void)writeResultFile;
 
@@ -63,10 +63,9 @@ static void __attribute__ ((destructor)) BPTestXunitXmlListenerStop(void)
         [center addObserver:self selector:@selector(testCaseStarted:) name:SenTestCaseDidStartNotification object:nil];
         [center addObserver:self selector:@selector(testCaseStopped:) name:SenTestCaseDidStopNotification object:nil];
         [center addObserver:self selector:@selector(testCaseFailed:) name:SenTestCaseDidFailNotification object:nil];
-
-        self.document = [NSXMLDocument new];
-        self.suitesElement = [NSXMLElement elementWithName:@"testsuites"];
-        [self.document addChild:self.suitesElement];
+        
+        self.document = [[(GDataXMLDocument *) [GDataXMLDocument alloc] initWithRootElement:[GDataXMLElement elementWithName:@"testsuites"]] autorelease];
+        self.suitesElement = self.document.rootElement;
     }
     return self;
 }
@@ -83,8 +82,17 @@ static void __attribute__ ((destructor)) BPTestXunitXmlListenerStop(void)
 
 - (void)writeResultFile;
 {
-    if (self.document)
-        [[self.document XMLData] writeToFile:@"ocunit.xml" atomically:NO];
+    if (self.document) {
+        char *ocunitPathCString = getenv("BPOCUnitXMLReporterOut");
+        NSString *ocunitPath;
+        if (ocunitPathCString) {
+            ocunitPath = [NSString stringWithCString:ocunitPathCString
+                                            encoding:NSUTF8StringEncoding];
+        } else {
+            ocunitPath = @"ocunit.xml";
+        }
+        [[self.document XMLData] writeToFile:ocunitPath atomically:NO];
+    }
 }
 
 
@@ -93,8 +101,8 @@ static void __attribute__ ((destructor)) BPTestXunitXmlListenerStop(void)
 - (void)testSuiteStarted:(NSNotification*)notification;
 {
     SenTest *test = [notification test];
-    self.currentSuiteElement = [NSXMLElement elementWithName:@"testsuite"];
-    [self.currentSuiteElement addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:[test name]]];
+    self.currentSuiteElement = [GDataXMLElement elementWithName:@"testsuite"];
+    [self.currentSuiteElement addAttribute:[GDataXMLNode attributeWithName:@"name" stringValue:[test name]]];
 }
 
 - (void)testSuiteStopped:(NSNotification*)notification;
@@ -109,8 +117,8 @@ static void __attribute__ ((destructor)) BPTestXunitXmlListenerStop(void)
 - (void)testCaseStarted:(NSNotification*)notification;
 {
     SenTest *test = [notification test];
-    self.currentCaseElement = [NSXMLElement elementWithName:@"testcase"];
-    [self.currentCaseElement addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:[test name]]];
+    self.currentCaseElement = [GDataXMLElement elementWithName:@"testcase"];
+    [self.currentCaseElement addAttribute:[GDataXMLNode attributeWithName:@"name" stringValue:[test name]]];
 }
 
 - (void)testCaseStopped:(NSNotification*)notification;
@@ -121,7 +129,7 @@ static void __attribute__ ((destructor)) BPTestXunitXmlListenerStop(void)
 
 - (void)testCaseFailed:(NSNotification*)notification;
 {
-    NSXMLElement *failureElement = [NSXMLElement elementWithName:@"failure"];
+    GDataXMLElement *failureElement = [GDataXMLElement elementWithName:@"failure"];
     [failureElement setStringValue:[[notification exception] description]];
     [self.currentCaseElement addChild:failureElement];
 }

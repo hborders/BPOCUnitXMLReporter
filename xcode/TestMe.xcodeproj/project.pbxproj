@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B08D5ED1407ECFC004214E7 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B08D5E81407EBB7004214E7 /* GDataXMLNode.m */; };
+		7B08D5EF1407F046004214E7 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B08D5EE1407F046004214E7 /* COPYING.txt */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		960AB4CF10937EC70094C74A /* BPOCUnitXMLReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 960AB4C110937C630094C74A /* BPOCUnitXMLReporter.m */; };
@@ -21,7 +23,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* TestMe */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = TestMe;
 		};
 /* End PBXContainerItemProxy section */
@@ -32,15 +34,18 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* TestMe_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMe_Prefix.pch; sourceTree = "<group>"; };
+		7B08D5E71407EBB7004214E7 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = ../GDataXMLNode.h; sourceTree = "<group>"; };
+		7B08D5E81407EBB7004214E7 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = ../GDataXMLNode.m; sourceTree = "<group>"; };
+		7B08D5EE1407F046004214E7 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING.txt; path = ../COPYING.txt; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* TestMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		960AB4C110937C630094C74A /* BPOCUnitXMLReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPOCUnitXMLReporter.m; sourceTree = "<group>"; };
-		960AB4CA10937EB30094C74A /* TestMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TestMeTests.octest; path = build/Debug/TestMeTests.octest; sourceTree = "<group>"; };
+		960AB4C110937C630094C74A /* BPOCUnitXMLReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPOCUnitXMLReporter.m; path = ../BPOCUnitXMLReporter.m; sourceTree = "<group>"; };
+		960AB4CA10937EB30094C74A /* TestMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		960AB4CB10937EB30094C74A /* TestMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestMeTests-Info.plist"; sourceTree = "<group>"; };
 		960AB4D810937F030094C74A /* BPExampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPExampleClass.h; sourceTree = "<group>"; };
 		960AB4D910937F030094C74A /* BPExampleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPExampleClass.m; sourceTree = "<group>"; };
 		960AB4E510937F420094C74A /* BPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPTests.m; sourceTree = "<group>"; };
-		960AB4FB109385380094C74A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		960AB4FB109385380094C74A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +81,7 @@
 		0867D691FE84028FC02AAC07 /* TestMe */ = {
 			isa = PBXGroup;
 			children = (
+				7B08D5F01407F1C0004214E7 /* BPOCUnitXMLReporter */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				960AB4E310937F270094C74A /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -98,6 +104,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7B08D5EE1407F046004214E7 /* COPYING.txt */,
 				960AB4FB109385380094C74A /* README.md */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
@@ -137,9 +144,18 @@
 			children = (
 				960AB4CB10937EB30094C74A /* TestMeTests-Info.plist */,
 				32DBCF5E0370ADEE00C91783 /* TestMe_Prefix.pch */,
-				960AB4C110937C630094C74A /* BPOCUnitXMLReporter.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		7B08D5F01407F1C0004214E7 /* BPOCUnitXMLReporter */ = {
+			isa = PBXGroup;
+			children = (
+				960AB4C110937C630094C74A /* BPOCUnitXMLReporter.m */,
+				7B08D5E71407EBB7004214E7 /* GDataXMLNode.h */,
+				7B08D5E81407EBB7004214E7 /* GDataXMLNode.m */,
+			);
+			name = BPOCUnitXMLReporter;
 			sourceTree = "<group>";
 		};
 		960AB4E310937F270094C74A /* Tests */ = {
@@ -209,7 +225,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "TestMe" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* TestMe */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -227,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				7B08D5EF1407F046004214E7 /* COPYING.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +291,7 @@
 			files = (
 				960AB4CF10937EC70094C74A /* BPOCUnitXMLReporter.m in Sources */,
 				960AB4E610937F420094C74A /* BPTests.m in Sources */,
+				7B08D5ED1407ECFC004214E7 /* GDataXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +395,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "TestMeTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
+					"-lxml2",
 					"-framework",
 					Cocoa,
 					"-framework",
@@ -399,9 +423,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "TestMeTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
+					"-lxml2",
 					"-framework",
 					Cocoa,
 					"-framework",
